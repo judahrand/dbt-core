@@ -49,6 +49,7 @@ Contributors:
 
 ### Fixes
 - Fix bug accessing target fields in deps and clean commands ([#4752](https://github.com/dbt-labs/dbt-core/issues/4752), [#4758](https://github.com/dbt-labs/dbt-core/issues/4758))
+- Fixed a bug where nodes that depend on multiple macros couldn't be selected using `-s state:modified` ([#4678](https://github.com/dbt-labs/dbt-core/issues/4678))
 
 ## dbt-core 1.0.2 (TBD)
 
