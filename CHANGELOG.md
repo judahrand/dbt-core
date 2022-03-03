@@ -38,6 +38,7 @@ Contributors:
 - Fix slow `dbt run` when using Postgres adapter, by deduplicating relations in `postgres_get_relations` ([#3058](https://github.com/dbt-labs/dbt-core/issues/3058), [#4521](https://github.com/dbt-labs/dbt-core/pull/4521))
 - Fix partial parsing bug with multiple snapshot blocks ([#4771](https//github.com/dbt-labs/dbt-core/issues/4772), [#4773](https://github.com/dbt-labs/dbt-core/pull/4773))
 - Fix lack of color output on Linux and MacOS when piping the output into another process using the shell pipe (`|`) [#4792](https://github.com/dbt-labs/dbt-core/pull/4792)
+- Fixed a bug where nodes that depend on multiple macros couldn't be selected using `-s state:modified` ([#4678](https://github.com/dbt-labs/dbt-core/issues/4678))
 
 Contributors:
 - [@varun-dc ](https://github.com/varun-dc) ([#4792](https://github.com/dbt-labs/dbt-core/pull/4792))
@@ -49,7 +50,6 @@ Contributors:
 
 ### Fixes
 - Fix bug accessing target fields in deps and clean commands ([#4752](https://github.com/dbt-labs/dbt-core/issues/4752), [#4758](https://github.com/dbt-labs/dbt-core/issues/4758))
-- Fixed a bug where nodes that depend on multiple macros couldn't be selected using `-s state:modified` ([#4678](https://github.com/dbt-labs/dbt-core/issues/4678))
 
 ## dbt-core 1.0.2 (TBD)
 
