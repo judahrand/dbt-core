@@ -310,7 +310,7 @@ class TestProjInfo:
         return {model_name: materialization for (model_name, materialization) in result}
 
 
-@pytest.fixture
+@pytest.fixture(autouse=True)
 def project(
     project_root,
     profiles_root,
