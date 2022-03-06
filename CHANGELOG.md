@@ -12,6 +12,7 @@
 - Allow override of string and numeric types for adapters. ([#4603](https://github.com/dbt-labs/dbt-core/issues/4603))
 - A change in secret environment variables won't trigger a full reparse [#4650](https://github.com/dbt-labs/dbt-core/issues/4650) [4665](https://github.com/dbt-labs/dbt-core/pull/4665)
 - Fix misspellings and typos in docstrings ([#4545](https://github.com/dbt-labs/dbt-core/pull/4545))
+- Fix issue where the names of two generic tests run with the same args but different configs would collide. ([#4829](https://github.com/dbt-labs/dbt-core/pull/4829))
 
 ### Under the hood
 - Testing cleanup ([#4496](https://github.com/dbt-labs/dbt-core/pull/4496), [#4509](https://github.com/dbt-labs/dbt-core/pull/4509))
