@@ -410,7 +410,8 @@ class TestBuilder(Generic[Testable]):
             raise self._bad_type()
         if self.namespace is not None:
             name = "{}_{}".format(self.namespace, name)
-        return get_nice_generic_test_name(name, self.target.name, self.args)
+        args_and_config = {**self.args, **self.config}
+        return get_nice_generic_test_name(name, self.target.name, args_and_config)
 
     def construct_config(self) -> str:
         configs = ",".join(
