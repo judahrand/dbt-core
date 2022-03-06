@@ -113,7 +113,7 @@ class TestLimitedSchemaTests(DBTIntegrationTest):
         args = FakeArgs()
         test_task = TestTask(args, self.config)
         return test_task.run()
-    
+
     def assertTestFailed(self, result):
         self.assertEqual(result.status, "fail")
         self.assertFalse(result.skipped)
@@ -369,7 +369,7 @@ class TestCustomConfigSchemaTests(DBTIntegrationTest):
     @property
     def models(self):
         return "models-v2/custom-configs"
-    
+
     @property
     def project_config(self):
         return {
@@ -750,15 +750,17 @@ class TestSchemaTestNameCollision(DBTIntegrationTest):
 
         # both models and both tests run
         self.assertEqual(len(results), 2)
-        self.assertEqual(len(test_results), 2)
+        self.assertEqual(len(test_results), 3)
 
         # both tests have the same unique id except for the hash
         expected_unique_ids = [
             'test.test.not_null_base_extension_id.922d83a56c',
-            'test.test.not_null_base_extension_id.c8d18fe069'
+            'test.test.not_null_base_extension_id.c8d18fe069',
+            'test.test.not_null_base_extension_id__id_NOT_NULL_.7c347577eb',
         ]
         self.assertIn(test_results[0].node.unique_id, expected_unique_ids)
         self.assertIn(test_results[1].node.unique_id, expected_unique_ids)
+        self.assertIn(test_results[2].node.unique_id, expected_unique_ids)
 
 
 class TestInvalidSchema(DBTIntegrationTest):

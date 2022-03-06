@@ -10,3 +10,5 @@ models:
   - name: id
     tests:
     - not_null
+    - not_null:
+        where: id = 'NOT_NULL'
